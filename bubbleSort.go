@@ -8,11 +8,11 @@ import (
 	"strings"
 )
 
-//read input from user
+//read input from user and parse string to int
 func readInput() []int {
 	var stdin *bufio.Reader
 	stdin = bufio.NewReader(os.Stdin)
-	fmt.Println("Insert some numbers for your array: (ex. 1,2,3)")
+	fmt.Println("Insert some numbers to be ordered: (ex. 3,1,2)")
 	s, _ := stdin.ReadString('\n')
 	s = s[0 : len(s)-1]
 	//testString := "2,5,13,59"
@@ -29,6 +29,7 @@ func readInput() []int {
 	return intArray
 }
 
+//sort array of integer passed as parameter
 func bubbleSort(array []int) []int {
 	flag := true
 	n := len(array) - 2
